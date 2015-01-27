@@ -1,0 +1,17 @@
+<html>
+  <head>
+    <title>Shopping List</title>
+  </head>
+  <body>
+    <h1>Shopping List</h1>
+    <ul>
+      {% for item in items %}
+        <li>{{ item }} <small><a href="{{ url_for('remove_item', name=item) }}">[Remove]</a></small></li>
+      {% endfor %}
+    </ul>
+    <form method="POST">
+      <input type="text" name="item">
+      <input type="submit" value="Add to List">
+    </form>
+  </body>
+</html>
